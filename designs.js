@@ -1,18 +1,21 @@
 // Select color input
 // Select size input
 
-const myTitle = document.querySelector('h1'); //title of page
+const myTitle = document.querySelector('h1'); //title of page for added extra
 const colorPicked = document.querySelector('#colorPicker');// for color colorpicked
-const canvas = document.querySelector('#pixelCanvas');
-var num = 0;
+const canvas = document.querySelector('#pixelCanvas');// selects canvas
+
 function removeBoxes(){
-  if (num > 1){
-  removed = canvas.querySelectorAll('tr');
-  removed.remove();}
-}
+  const tbodyPresent = document.querySelector('tbody');
+  if (tbodyPresent != null){
+    tbodyPresent.remove()
+  }
+}//this function resets the canvas
 
 function makeGrid(evt) {
   evt.preventDefault();
+  removeBoxes();
+  canvas.insertAdjacentHTML('afterbegin', '<tbody></tbody>')
   const boxattributes = {
     row: document.querySelector('#inputWidth'),
     column: document.querySelector('#inputHeight'),
@@ -25,8 +28,7 @@ function makeGrid(evt) {
   }
   add();
   boxattributes.tbodys.insertAdjacentHTML('afterbegin',gridmake.join(""));
-  num = 2;
-}
+}//makes the Grid on the canvas
 
 function changeColor(event) {
   if (event.target.nodeName.toLowerCase() === 'td') {
