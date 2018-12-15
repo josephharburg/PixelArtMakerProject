@@ -1,16 +1,7 @@
 # Pixel Art Maker Project
-
-## Table of Contents
-
-* [Instructions](#instructions)
-* [Contributing](#contributing)
-
-## Instructions
-
-To get started, open `designs.js` and start building out the app's functionality.
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+This project was made for the Intro to Programming course on Udacity.
+The object of the project was to create a webpage that allows users to create a
+grid of desired height and width.
+After creating the grid the user can then change the colors of each box
+in the grid with whatever color is selected. Thus making a canvas on which the
+user can make art!

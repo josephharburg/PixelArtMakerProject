@@ -1,7 +1,7 @@
 const myTitle = document.querySelector('h1'); // Title of page for added extra
 const colorPicked = document.querySelector('#colorPicker');// For color picked
 const canvas = document.querySelector('#pixelCanvas');// Selects canvas
-
+const clicked = document.querySelector('#sizePicker'); //Selects sizePicker
 function removeBoxes(){ // This function resets the canvas
   const tbodyPresent = document.querySelector('tbody');
   if (tbodyPresent != null){
@@ -19,12 +19,11 @@ function makeGrid(evt) { // Makes the Grid on the canvas
     tableBody: document.querySelector('tbody')
   }
   const gridMake = [];
-
   function add() { // Add script to gridMake array then inserts it into table
     for (var e = 0; e < boxattributes.column.value; e++){
     gridMake.splice(e,0,"<tr>"); gridMake.splice(e-1,0,'</tr>');
     for (var x = 0; x < boxattributes.row.value; x++){
-      gridMake.splice(e+1,0,"<td></td>");}
+      gridMake.splice(e+2,0,"<td></td>");}
     }
     boxattributes.tableBody.insertAdjacentHTML('afterbegin',gridMake.join(""));
   }
@@ -45,4 +44,4 @@ function changeTitle(evt) { // Changes the Title to color picked when clicked
 
 canvas.addEventListener('click', changeColor, false);
 myTitle.addEventListener ('click', changeTitle);
-document.addEventListener ('submit', makeGrid);
+clicked.addEventListener ('click', makeGrid);
